@@ -48,11 +48,25 @@ if (isAgeInvalid || isKmInvalid){
 //Calcolo del prezzo
 
 
+let ticketPrice = (userKm * 21 / 100)
+console.log('ticketPrice', ticketPrice)
 
+//Applicazione sconti e produzione risultato
 
+if (userAge < 18) {
+ticketPrice = ticketPrice -  ((20 / 100) * ticketPrice)
+} else {
+resultElement.innerHTML = `Il prezzo del biglietto è <strong> €${ticketPrice}</strong>`
+}
+
+if (userAge > 65) {
+ticketPrice = ticketPrice - ((40 / 100) * ticketPrice)
+} else {
+resultElement.innerHTML = `Il prezzo del biglietto è <strong> €${ticketPrice}</strong>`
+}
 
 
 /*Produzione risultato */ 
-resultElement.innerHTML = `Il prezzo del biglietto è <strong></strong>`
 
+  resultElement.innerHTML = `Il prezzo del biglietto è <strong> €${ticketPrice}</strong>`
 
