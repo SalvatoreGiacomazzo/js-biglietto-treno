@@ -17,6 +17,11 @@ se l'utente ha più di 65 anni sarà applicato uno sconto del 40%.
 5. Mostrare il risultato a schermo.
 */ 
 
+//Fase di preparazione
+const resultElement = document.getElementById('ticket')
+console.log(resultElement)
+
+
 //Fase di raccolta dati
 const userAge = prompt('Indichi la sua età.')
 const userKm = prompt('Indichi i chilometri che intende percorrere.')
@@ -27,11 +32,29 @@ console.log('userKm', userKm);
 //Validazione dei dati
 //è obbligatorio che l'utente inserica dei numeri.
 
-const isAgeInvalid = isNaN(userAge) || userAge != 1 || userAge > 99;
-const isKmInvalid = isNaN(userKm) || userKm != 5;
- 
-if(isAgeInvalid || isKmInvalid){
-    const errorWarning = isAgeInvalid || isKmInvalid ? 'Per favore, inserisca un numero valido' :
-alert(errorWarning);
+const isAgeInvalid = isNaN(userAge) || userAge < 1 || userAge > 99;
+const isKmInvalid = isNaN(userKm) || userKm < 5;
+ console.log('isAgeInvalid', isAgeInvalid);
+ console.log('isKmInvalid', isKmInvalid);
+
+
+if (isAgeInvalid){
+  alert('Per favore, inserire un numero valido')
 }
-        
+
+if (isKmInvalid){
+  alert('Per favore, inserire un numero valido')
+}
+
+
+//Calcolo del prezzo
+
+
+
+
+
+
+/*Produzione risultato */ 
+resultElement.innerHTML = `La tua password è <strong>${firstName}${lastName}${favColor}${parseInt('21')}</strong>`
+
+
