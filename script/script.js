@@ -38,13 +38,11 @@ const isKmInvalid = isNaN(userKm) || userKm < 5;
  console.log('isKmInvalid', isKmInvalid);
 
 
-if (isAgeInvalid){
+if (isAgeInvalid || isKmInvalid){
   alert('Per favore, inserire un numero valido')
 }
 
-if (isKmInvalid){
-  alert('Per favore, inserire un numero valido')
-}
+
 
 
 //Calcolo del prezzo
@@ -55,6 +53,6 @@ if (isKmInvalid){
 
 
 /*Produzione risultato */ 
-resultElement.innerHTML = `La tua password è <strong>${firstName}${lastName}${favColor}${parseInt('21')}</strong>`
+resultElement.innerHTML = `Il prezzo del biglietto è <strong></strong>`
 
 
